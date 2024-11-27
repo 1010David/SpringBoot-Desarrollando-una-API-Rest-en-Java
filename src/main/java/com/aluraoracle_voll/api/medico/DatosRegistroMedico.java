@@ -1,6 +1,7 @@
 package com.aluraoracle_voll.api.medico;
 
 import com.aluraoracle_voll.api.direccion.DatosDireccion;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,13 +15,13 @@ public record DatosRegistroMedico(
         @Email
         String email,
         @NotBlank
-        @Pattern(regexp = "\\d{7,12}")
         String telefono,
         @NotBlank
         @Pattern(regexp = "\\d{4,6}")
         String documento,
-        @NotBlank
+        @NotNull
         Especialidad especialidad,
         @NotNull
+        @Valid
         DatosDireccion direccion) {
 }

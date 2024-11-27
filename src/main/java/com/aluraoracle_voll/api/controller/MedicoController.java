@@ -3,6 +3,7 @@ package com.aluraoracle_voll.api.controller;
 import com.aluraoracle_voll.api.medico.DatosRegistroMedico;
 import com.aluraoracle_voll.api.medico.Medico;
 import com.aluraoracle_voll.api.medico.MedicoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
     @PostMapping
-    public void resgistrarMedico(@RequestBody DatosRegistroMedico datosRegistroMedico) {
+    public void resgistrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico) {
         medicoRepository.save(new Medico(datosRegistroMedico));
     }
 
