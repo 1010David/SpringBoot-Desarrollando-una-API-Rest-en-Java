@@ -12,7 +12,5 @@ public record DatosDireccion(
         @NotBlank
         String numero,
         @NotBlank
-        String complemento,
-        @NotBlank
-        DatosDireccion direccion) {
+        String complemento ){
 }

@@ -7,7 +7,7 @@ create table medicos(
     especialidad varchar(100) not null,
     calle varchar(100) not null,
     distrito varchar(100) not null,
-    complemento varchar(100) not nulls,
+    complemento varchar(100) not null,
     numero varchar(20),
     ciudad varchar(100) not null,
 
