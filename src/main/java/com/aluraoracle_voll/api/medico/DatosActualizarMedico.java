@@ -1,4 +1,4 @@
-package com.aluraoracle_voll.api.controller;
+package com.aluraoracle_voll.api.medico;
 
 import com.aluraoracle_voll.api.direccion.DatosDireccion;
 import jakarta.validation.constraints.NotNull;

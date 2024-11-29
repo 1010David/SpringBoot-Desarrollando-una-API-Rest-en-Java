@@ -1,6 +1,5 @@
 package com.aluraoracle_voll.api.medico;
 
-import com.aluraoracle_voll.api.controller.DatosActualizarMedico;
 import com.aluraoracle_voll.api.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +23,7 @@ public class Medico {
     private String email;
     private String telefono;
     private String documento;
+    private Boolean activo;
     @Enumerated(EnumType.STRING)
     private Especialidad especialidad;
     @Embedded
@@ -31,6 +31,7 @@ public class Medico {
 
 
     public Medico(DatosRegistroMedico datosRegistroMedico) {
+        this.activo = true;
         this.nombre = datosRegistroMedico.nombre();
         this.email = datosRegistroMedico.email();
         this.documento = datosRegistroMedico.documento();
@@ -40,17 +41,17 @@ public class Medico {
     }
 
 
-    public void actualizarMedico(DatosActualizarMedico datosActualizarMedico) {
-        if(datosActualizarMedico.nombre() != null){
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        if (datosActualizarMedico.nombre() != null) {
             this.nombre = datosActualizarMedico.nombre();
         }
 
-        if(datosActualizarMedico.documento() != null){
-        this.documento = datosActualizarMedico.documento();
+        if (datosActualizarMedico.documento() != null) {
+            this.documento = datosActualizarMedico.documento();
         }
 
-        if(datosActualizarMedico.direccion() != null){
-            this.direccion = direccion.actualizarDireccion(datosActualizarMedico.direccion());
+        if (datosActualizarMedico.direccion() != null) {
+            this.direccion = direccion.actualizarDatos(datosActualizarMedico.direccion());
         }
 
     }
