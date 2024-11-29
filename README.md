@@ -23,3 +23,14 @@ Usar la anotación @GetMapping para mapear métodos en los Controllers que produ
 Usar la interfaz Pageable de Spring para realizar consultas con paginación;
 Controlar la paginación y el ordenamiento de los datos devueltos por la API con los parámetros page, size y sort;
 Configurar el proyecto para que los comandos SQL se visualicen en la consola.
+
+
+
+
+
+En esta clase, aprendiste a:
+Mapear solicitudes PUT con la anotación @PutMapping;
+Escribir un código para actualizar la información de un registro en la base de datos;
+Mapear solicitudes DELETE con la anotación @DeleteMapping;
+Mapear parámetros dinámicos en la URL con la anotación @PathVariable;
+Implementar el concepto de exclusión lógica utilizando un atributo booleano.
