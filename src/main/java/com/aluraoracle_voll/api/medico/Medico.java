@@ -55,4 +55,8 @@ public class Medico {
         }
 
     }
+
+    public void desactivarMedico() {
+        this.activo = false;
+    }
 }

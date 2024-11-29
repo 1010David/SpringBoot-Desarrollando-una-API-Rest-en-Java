@@ -1,10 +1,7 @@
 package com.aluraoracle_voll.api.controller;
 
 
-import com.aluraoracle_voll.api.paciente.DatosListaPaciente;
-import com.aluraoracle_voll.api.paciente.DatosRegistroPaciente;
-import com.aluraoracle_voll.api.paciente.Paciente;
-import com.aluraoracle_voll.api.paciente.PacienteRepository;
+import com.aluraoracle_voll.api.paciente.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -25,10 +22,24 @@ public class PacienteController {
     public Page<DatosListaPaciente> listar(@PageableDefault(page = 0, size = 10, sort = {"nombre"}) Pageable paginacion) {
         return repository.findAll(paginacion).map(DatosListaPaciente::new);
     }
+
     @PostMapping
     @Transactional
     public void registrar(@RequestBody @Valid DatosRegistroPaciente datos) {
+
         repository.save(new Paciente(datos));
+    }
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DatosActualizacionPaciente datos) {
+        var paciente = repository.getReferenceById(datos.id());
+        paciente.atualizarInformacion(datos);
+    }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void remover(@PathVariable Long id) {
+        var paciente = repository.getReferenceById(id);
+        paciente.inactivar();
     }
 
 }
