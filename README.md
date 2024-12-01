@@ -1,36 +1,46 @@
-Dearrollando una API Rest
+📚 API Rest para Gestión de Médicos y Pacientes
+Este proyecto es una API Restful desarrollada con Spring Boot que permite gestionar médicos y pacientes, implementando las operaciones básicas de creación, lectura, actualización y eliminación (CRUD). Es una práctica para aprender conceptos clave de desarrollo backend con Spring Boot, JPA, validaciones y más.
 
-Crear un proyecto Spring Boot usando el sitio web Spring Initializr;
-Importar el proyecto a IntelliJ y ejecutar una aplicación Spring Boot a través de la clase que contiene el método main;
-Crear una clase Controller y mapear una URL en él usando las anotaciones @RestController y @RequestMapping;
-Realizar una solicitud de prueba en el navegador accediendo a la URL mapeada en el Controller.
-En esta clase, aprendiste a:
-Mapear solicitudes POST en una clase Controller;
-Enviar solicitudes POST a la API usando Insomnia;
-Enviar datos a la API en formato JSON;
-Utilizar la anotación @RequestBody para recibir datos del cuerpo de la solicitud en un parámetro en el Controller;
-Use el padrón DTO (Data Transfer Object), a través de Java Records, para representar los datos recibidos en una solicitud POST.
+🚀 Características
+Creación de un proyecto Spring Boot desde Spring Initializr.
+Controladores Rest con las anotaciones @RestController, @RequestMapping, @PostMapping, @GetMapping, @PutMapping, y @DeleteMapping.
+Gestión de datos utilizando DTOs (Data Transfer Objects).
+Persistencia de datos con JPA y bases de datos relacionales.
+Migraciones automáticas con Flyway.
+Validaciones con Bean Validation (@NotBlank, @RequestBody).
+Paginación y ordenamiento de datos usando la interfaz Pageable.
+Exclusión lógica de registros.
 
-En esta clase, aprendiste a:
-Agregar nuevas dependencias en el proyecto;
-Asignar una entidad JPA y crear una interfaz de Repositorio para ella;
-Utilizar Flyway como herramienta de migración de proyectos;
-Realice validaciones con Bean Validation usando algunas de sus anotaciones, como @NotBlank
-
-
-En esta clase, aprendiste a:
-Usar la anotación @GetMapping para mapear métodos en los Controllers que producen datos;
-Usar la interfaz Pageable de Spring para realizar consultas con paginación;
-Controlar la paginación y el ordenamiento de los datos devueltos por la API con los parámetros page, size y sort;
-Configurar el proyecto para que los comandos SQL se visualicen en la consola.
-
-
-
-
-
-En esta clase, aprendiste a:
-Mapear solicitudes PUT con la anotación @PutMapping;
-Escribir un código para actualizar la información de un registro en la base de datos;
-Mapear solicitudes DELETE con la anotación @DeleteMapping;
-Mapear parámetros dinámicos en la URL con la anotación @PathVariable;
-Implementar el concepto de exclusión lógica utilizando un atributo booleano.
+📋 Funcionalidades
+1. Crear una API básica con Spring Boot
+Crear un proyecto en Spring Initializr.
+Importar y ejecutar el proyecto en IntelliJ.
+Implementar controladores con @RestController y @RequestMapping.
+Probar las URL desde el navegador.
+2. Manejo de solicitudes POST
+Enviar solicitudes POST en formato JSON usando Insomnia.
+Recibir datos en la API con @RequestBody.
+Representar datos con DTOs utilizando Java Records.
+3. Persistencia de datos
+Agregar dependencias de JPA y H2.
+Crear entidades y repositorios.
+Implementar migraciones con Flyway.
+4. Validaciones
+Usar Bean Validation para validar datos de entrada, como:
+@NotBlank: Validar campos no vacíos.
+5. Paginación y ordenamiento
+Implementar consultas con paginación usando la interfaz Pageable.
+Controlar la paginación con parámetros como page, size y sort.
+6. Actualización y eliminación
+Mapear solicitudes PUT con @PutMapping.
+Mapear solicitudes DELETE con @DeleteMapping.
+Usar @PathVariable para parámetros dinámicos.
+Implementar exclusión lógica con un atributo booleano.
+🛠️ Tecnologías Utilizadas
+Java 17
+Spring Boot 3.x
+JPA/Hibernate
+H2 Database
+Flyway
+Bean Validation
+Insomnia (para pruebas)
